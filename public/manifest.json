@@ -1,0 +1,37 @@
+{
+  "name": "ระบบขยะแลกของรางวัล",
+  "short_name": "ขยะแลกรางวัล",
+  "description": "ระบบบันทึกข้อมูลโครงการขยะแลกของรางวัล คำนวณคะแนนอัตโนมัติ แยกตามห้อง พร้อมส่งออก Excel และ PDF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f0fdf4",
+  "theme_color": "#1a7a4c",
+  "lang": "th",
+  "icons": [
+    {
+      "src": "/S__73916420.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/S__73916420.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/S__73916420.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/S__73916420.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ]
+}
