@@ -775,22 +775,33 @@ export function SearchScores({ lang, currentUser }: { lang: Lang; currentUser: A
           </div>
         ) : (
           <div className="search-results-scroll overflow-x-auto rounded-lg border">
-            <table className="w-full min-w-[480px] border-collapse text-sm">
+            <table className="w-full min-w-[560px] border-collapse text-sm">
               <thead className="bg-muted">
                 <tr>
+                  <th className="border px-2 py-2 text-center">{lt("exchangeBtn", lang)}</th>
                   <th className="border px-2 py-2 text-left">{lt("empCode", lang)}</th>
                   <th className="border px-2 py-2 text-left">{lt("empName", lang)}</th>
                   <th className="border px-2 py-2 text-left">{lt("department", lang)}</th>
                   <th className="border px-2 py-2 text-right">{lt("totalScore", lang)}</th>
                   <th className="border px-2 py-2 text-right">{lt("remainingScore", lang)}</th>
                   <th className="border px-2 py-2 text-left">{lt("importDate", lang)}</th>
-                  <th className="border px-2 py-2 text-center">{lt("exchangeBtn", lang)}</th>
                 </tr>
               </thead>
               <tbody>
                 {filtered.map((s) => (
                   <Fragment key={s.id}>
                   <tr className="border-b hover:bg-muted/30">
+                    <td className="border px-2 py-2 text-center">
+                      <Button
+                        size="sm"
+                        variant={exchangeId === s.id ? "default" : "outline"}
+                        onClick={() => setExchangeId(exchangeId === s.id ? null : s.id)}
+                        className="h-7"
+                      >
+                        <Gift className="mr-1 h-3.5 w-3.5" />
+                        {exchangeId === s.id ? lt("closeBtn", lang) : lt("exchangeBtn", lang)}
+                      </Button>
+                    </td>
                     <td className="border px-2 py-2">
                       <Highlight text={s.employee_code} keyword={debounced} />
                     </td>
@@ -808,17 +819,6 @@ export function SearchScores({ lang, currentUser }: { lang: Lang; currentUser: A
                     </td>
                     <td className="border px-2 py-2 text-xs text-muted-foreground">
                       {s.import_date}
-                    </td>
-                    <td className="border px-2 py-2 text-center">
-                      <Button
-                        size="sm"
-                        variant={exchangeId === s.id ? "default" : "outline"}
-                        onClick={() => setExchangeId(exchangeId === s.id ? null : s.id)}
-                        className="h-7"
-                      >
-                        <Gift className="mr-1 h-3.5 w-3.5" />
-                        {exchangeId === s.id ? lt("closeBtn", lang) : lt("exchangeBtn", lang)}
-                      </Button>
                     </td>
                   </tr>
                   {exchangeId === s.id && (

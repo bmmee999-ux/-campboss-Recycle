@@ -1,4 +1,4 @@
-const CACHE_NAME = "waste-rewards-v1";
+const CACHE_NAME = "waste-rewards-v2";
 const STATIC_ASSETS = ["/", "/index.html", "/manifest.json", "/S__73916420.jpg"];
 
 self.addEventListener("install", (event) => {
